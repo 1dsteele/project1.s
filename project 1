@@ -42,3 +42,9 @@ j counter
 
 # for the lowercase charater u
 lowercaseU:
+bge $s2, 117, counter # for the letter u
+sub $s2m $s2, 87
+add $s3, $s3, $s2
+j counter
+
+numbers:
