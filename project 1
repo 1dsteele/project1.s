@@ -5,3 +5,8 @@ enter: .asciiz "\n"
 # N = 26 + (X % 11), N(base) = 31
 # M = N - 10, M = 21
 .text
+
+main:
+li $v0, 8
+la $a0, input
+li $a1, 11
