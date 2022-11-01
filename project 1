@@ -1,9 +1,11 @@
+#MIPS Project 1
+
 .data
 
 input: .space 11 # for the user input
 enter: .asciiz "\n"
-# N = 26 + (X % 11), N(base) = 31
-# M = N - 10, M = 21
+# N = 26 + (X % 11), N(base) = 37
+# M = N - 10 = 27
 .text
 
 main:
@@ -22,10 +24,9 @@ beq $t0, 10, output
 
 sort_values:
 addi $t0, $t0, 1
-bge $s2, 97, lowercaseU
-bge $s2, 97, lowercaseU # lowercase (BLT = less than)
-bge $s2, 65, uppercaseU # uppercase (BLT = less than)
-bge $s2, 48, numbers # for 0, BLT = less than
+bge $s2, 97, lowercaseU  # lowercase (BLT = less than)
+bge $s2, 65, uppercaseU  # uppercase (BLT = less than)
+bge $s2, 48, numbers.    # for 0, BLT = less than
 
 # creating a function
 counter:
@@ -47,6 +48,7 @@ sub $s2m $s2, 87
 add $s3, $s3, $s2
 j counter
 
+# numbers range
 numbers:
 bge $s2, 48, counter
 sub $s2, $s2, 48
